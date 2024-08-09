@@ -1,0 +1,12 @@
+To ensure memory safety, after the line let s2 = s1;, 
+Rust considers s1 as no longer valid. 
+Therefore, Rust doesn’t need to free anything when s1 goes out of scope. 
+Check out what happens when you try to use s1 after s2 is created; it won’t work:
+
+
+
+In addition, there’s a design choice that’s implied by this: Rust will never automatically create “deep” copies of your data. 
+Therefore, any automatic copying can be assumed to be inexpensive in terms of runtime performance.
+
+https://doc.rust-lang.org/stable/book/ch04-01-what-is-ownership.html
+
